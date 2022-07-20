@@ -1,0 +1,14 @@
+footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-weight: bold;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    color: var(--third-color);
+
+    a {
+        text-decoration: none;
+        color: var(--forth-color);
+    }
+}
