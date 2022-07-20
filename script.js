@@ -9,11 +9,6 @@ const SEARCH_URL = BASE_URL + '/search/movie?' + API_KEY;
 const IMG_URL = "https://image.tmdb.org/t/p/w500/";
 
 
-const main = document.getElementById("main");
-const form = document.getElementById("form");
-const search = document.getElementById("search");
-const tagsEl = document.getElementById("tags");
-
 const genres = [
     {
         "id": 28,
@@ -93,6 +88,19 @@ const genres = [
     }
 ];
 
+const main = document.getElementById("main");
+const form = document.getElementById("form");
+const search = document.getElementById("search");
+const tagsEl = document.getElementById("tags");
+const prev = document.getElementById('prev');
+const current = document.getElementById('current');
+const next = document.getElementById('next');
+
+var currentPage = 1;
+var nextPage = 2;
+var prevPage = 3;
+var lastUrl = '';
+var totalPages = 100;
 
 var selectedGenre = [];
 setGeneres();
@@ -161,11 +169,33 @@ function clearButton() {
         tagsEl.append(clear);
     }
 }
+
 function getMovies(url) {
+    lastUrl = url;
     fetch(url).then(res => res.json()).then(data => {
         // console.log(data);
         if (data.results.length != 0) {
             showMovies(data.results);
+            currentPage = data.page;
+            nextPage = currentPage + 1;
+            prevPage = currentPage - 1;
+            totalPages = data.total_pages;
+            current.innerText = currentPage;
+
+            // disable and enable prev and next buttons
+            if (currentPage <= 1) {
+                prev.classList.add('disabled');
+                next.classList.remove('disabled');
+            } else if (currentPage >= totalPages) {
+                next.classList.add('disabled');
+                prev.classList.remove('disabled');
+            } else {
+                next.classList.remove('disabled');
+                prev.classList.remove('disabled');
+            }
+
+            // go to the top
+            tagsEl.scrollIntoView({ behavior: "smooth" })
         } else {
             main.innerHTML = `<h1 class="no-result">No Results found</h1>`
         }
@@ -228,3 +258,37 @@ form.addEventListener('submit', (e) => {
     }
 
 })
+
+
+
+next.addEventListener('click', () => {
+    if (nextPage <= totalPages) {
+        pageCall(nextPage);
+    }
+});
+
+prev.addEventListener('click', () => {
+    if (prevPage > 0) {
+        pageCall(prevPage);
+    }
+});
+
+function pageCall(page) {
+    let urlSplit = lastUrl.split('?');
+    let queryParams = urlSplit[1].split('&');
+    let key = queryParams[queryParams.length - 1].split('=');
+    if (key[0] != 'page') {
+        let url = lastUrl + '&page=' + page;
+        getMovies(url)
+    }
+    else {
+        key[1] = page;
+        let a = key.join('=');
+        queryParams[queryParams.length - 1] = a;
+        let b = queryParams.join('&');
+        let url = urlSplit[0] + '?' + b;
+        getMovies(url);
+
+
+    }
+}
