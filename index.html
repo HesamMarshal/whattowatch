@@ -3,12 +3,89 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What To Watch</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+
+    <title>What to Watch</title>
 </head>
 
 <body>
-    Go to this <a href="https://whattowatch.ir/old/">address</a>
+    <header>
+        <h1>What To Watch.ir</h1>
+        <form id="form">
+            <input type="text" id="search" class="search" placeholder="search">
+        </form>
+    </header>
+    <div id="tags">
+        <div class="tag">Action</div>
+        <div class="tag">Adventure</div>
+        <div class="tag">Comedy</div>
+        <div class="tag">Drama</div>
+    </div>
+    <main id="main">
+        <div class="movie">
+            <img src="./images/mason-kimbarovsky-unsplash.jpg" alt="Image">
+            <div class="movie-info">
+                <h3>Movie Title</h3>
+                <span class="green">9.8</span>
+            </div>
+            <div class="overview">
+                <h3>Overview</h3>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati itaque natus aliquid nesciunt
+                voluptatem sunt optio incidunt reiciendis. Mollitia minima possimus laborum quo iusto debitis ipsum
+                ducimus? Aperiam, et nesciunt?
+            </div>
+        </div>
+        <div class="movie">
+            <img src="./images/mason-kimbarovsky-unsplash.jpg" alt="Image">
+            <div class="movie-info">
+                <h3>Movie Title</h3>
+                <span class="green">9.8</span>
+                <div class="overview">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati itaque natus aliquid nesciunt
+                    voluptatem sunt optio incidunt reiciendis. Mollitia minima possimus laborum quo iusto debitis ipsum
+                    ducimus? Aperiam, et nesciunt?
+                </div>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="./images/mason-kimbarovsky-unsplash.jpg" alt="Image">
+            <div class="movie-info">
+                <h3>Movie Title</h3>
+                <span class="green">9.8</span>
+                <div class="overview">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati itaque natus aliquid nesciunt
+                    voluptatem sunt optio incidunt reiciendis. Mollitia minima possimus laborum quo iusto debitis ipsum
+                    ducimus? Aperiam, et nesciunt?
+                </div>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="./images/mason-kimbarovsky-unsplash.jpg" alt="Image">
+            <div class="movie-info">
+                <h3>Movie Title</h3>
+                <span class="green">9.8</span>
+                <div class="overview">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati itaque natus aliquid nesciunt
+                    voluptatem sunt optio incidunt reiciendis. Mollitia minima possimus laborum quo iusto debitis ipsum
+                    ducimus? Aperiam, et nesciunt?
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <div class="pagination">
+        <div class="page" id="prev">Previous Page</div>
+        <div class="current" id="current">1</div>
+        <div class="page" id="next">Next Page</div>
+
+    </div>
+    <footer>
+        <div>Developed by <a href="https://HesamMarshal.ir" target="_blank">Hesam Marshal</a></div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
