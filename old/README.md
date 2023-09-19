@@ -1,6 +1,6 @@
 # WhatToWatch
 
-This code implemented on [WhatToWatch.ir](https:/WhatToWatch.ir/)
+This code implemented on [WhatToWatch.ir](https:/WhatToWatch.ir/old/)
 
 The aim of this site is to suggest you the new and suitable movies and series for you.
 
