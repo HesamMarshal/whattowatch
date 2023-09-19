@@ -1,0 +1,36 @@
+footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-weight: bold;
+  padding: 2rem;
+  background-color: var(--secondary-color);
+  color: var(--third-color);
+}
+footer a {
+  text-decoration: none;
+  color: var(--forth-color);
+}
+
+.pagination {
+  display: flex;
+  margin: 10px 30px;
+  align-items: center;
+  justify-content: center;
+  color: var(--forth-color);
+}
+.pagination .page {
+  padding: 20px;
+  cursor: pointer;
+}
+.pagination .disabled {
+  cursor: not-allowed;
+  color: grey;
+}
+.pagination .current {
+  padding: 10px 15px;
+  border-radius: 50%;
+  border: 5px solid orange;
+  font-size: 20px;
+  font-weight: 600;
+}/*# sourceMappingURL=styles.css.map */
