@@ -3,3 +3,4 @@ cgi-bin/
 ideas/
 .secrets/
 .vscode/
+*.zip
